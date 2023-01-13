@@ -1,0 +1,26 @@
+.navbar {
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 20px;
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  p {
+    text-decoration: none;
+    color: rgb(249, 178, 51);
+
+    &:hover {
+      color: rgb(54, 169, 225);
+      font-weight: bold;
+    }
+  }
+
+}
