@@ -11,16 +11,22 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+
+    p {
+      text-decoration: none;
+      color: rgb(249, 178, 51);
+      min-width: 100px;
+      text-align: center;
+
+      &:hover {
+        color: rgb(54, 169, 225);
+        font-weight: bold;
+      }
+    }
   }
 
-  p {
-    text-decoration: none;
-    color: rgb(249, 178, 51);
-
-    &:hover {
-      color: rgb(54, 169, 225);
-      font-weight: bold;
-    }
+  img {
+    height: 50px;
   }
 
 }
