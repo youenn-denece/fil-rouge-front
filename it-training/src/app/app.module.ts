@@ -9,11 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import {MatRadioModule} from '@angular/material/radio';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    ConnexionComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +32,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
