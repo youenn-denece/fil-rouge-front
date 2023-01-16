@@ -21,7 +21,6 @@ import { DashboardSearchComponent } from './dashboard-index/dashboard-search/das
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +28,7 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     FooterComponent,
     HomeComponent,
     RegistrationFormComponent,
+    ConnexionComponent,
     DashboardIndexComponent,
     DashboardSearchComponent,
     DashboardSessionDetailsComponent
@@ -45,6 +45,6 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     MatSelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
