@@ -1,0 +1,14 @@
+.dashboard-index{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vw 20vw;
+  gap: 25px;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+ }
