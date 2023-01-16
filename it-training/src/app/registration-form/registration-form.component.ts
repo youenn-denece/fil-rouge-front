@@ -8,8 +8,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegistrationFormComponent {
   
-
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  hide = true;
 
 
 }
