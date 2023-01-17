@@ -9,22 +9,15 @@ import { StudentService } from '../student/student.service';
   styleUrls: ['./registration-form.component.scss']
 })
 export class RegistrationFormComponent implements OnInit {
-
-  student = {
-    firstname: 'endur',
-    lastname: 'en dur',
-    email: 'endur@gmail.com',
-    password: 'endur',
-    company: ''
-   };
   submitted = false;
-  //student : Student = new Student();
+  student : Student = new Student();
 
   constructor(private studentService: StudentService, private router: Router){}
   
   ngOnInit(): void {}
 
   saveStudent(){
+    console.log(this.student);
     this.studentService.create(this.student).subscribe( data =>{
       console.log(this.student);
       this.goToStudentList();
@@ -40,37 +33,6 @@ export class RegistrationFormComponent implements OnInit {
     console.log(this.student);
     this.saveStudent();
   }
-
-
-  // saveStudent(): void {
-  //   const student = {
-  //     firstName: this.student.firstname,
-  //     lastName: this.student.lastname,
-  //     email: this.student.email,
-  //     password: this.student.password,
-  //     entrepriseName: this.student.company
-  //   }; 
-  //   this.studentService.create(student)
-  //     .subscribe(
-  //       response => {
-  //         console.log(response);
-  //         this.submitted = true;
-  //       },
-  //       error => {
-  //         console.log(error)
-  //       });
-  // }
-
-  // newStudent(): void {
-  //   this.submitted = false;
-  //   this.student = {
-  //     firstname: '',
-  //     lastname: '',
-  //     email:'',
-  //     password:'',
-  //     company: ''
-  //   }
-  // }
   
   hide = true;
 }
