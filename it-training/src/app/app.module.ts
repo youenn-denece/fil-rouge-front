@@ -15,6 +15,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
@@ -45,7 +47,9 @@ import { FormationListComponent } from './formation-list/formation-list.componen
     MatIconModule,
     MatButtonModule,
     MatRadioModule,
-    MatSelectModule,
+    HttpClientModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

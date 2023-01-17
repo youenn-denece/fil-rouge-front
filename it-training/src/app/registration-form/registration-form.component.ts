@@ -1,15 +1,38 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Student } from '../student/student';
+import { StudentService } from '../student/student.service';
 
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.scss']
 })
-export class RegistrationFormComponent {
+export class RegistrationFormComponent implements OnInit {
+  submitted = false;
+  student : Student = new Student();
+
+  constructor(private studentService: StudentService, private router: Router){}
   
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  ngOnInit(): void {}
+
+  saveStudent(){
+    console.log(this.student);
+    this.studentService.create(this.student).subscribe( data =>{
+      console.log(this.student);
+      this.goToStudentList();
+    },
+    error => console.log(error));
+  }
+
+  goToStudentList(){
+    this.router.navigate(['/students']);
+  }
+  
+  onSubmit(){
+    console.log(this.student);
+    this.saveStudent();
+  }
+  
   hide = true;
-
-
 }
