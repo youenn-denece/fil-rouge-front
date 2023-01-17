@@ -46,8 +46,8 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     MatButtonModule,
     MatRadioModule,
     HttpClientModule,
-    FormsModule
-    MatSelectModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
