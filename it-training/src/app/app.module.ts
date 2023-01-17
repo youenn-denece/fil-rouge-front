@@ -15,11 +15,13 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
 import { DashboardSearchComponent } from './dashboard-index/dashboard-search/dashboard-search.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
+import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.component';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     ConnexionComponent,
     DashboardIndexComponent,
     DashboardSearchComponent,
-    DashboardSessionDetailsComponent
+    DashboardSessionDetailsComponent,
+    EvaluationIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
