@@ -13,6 +13,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

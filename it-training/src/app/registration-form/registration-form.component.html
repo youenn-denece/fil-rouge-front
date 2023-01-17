@@ -1,43 +1,38 @@
-<h1>Inscription</h1>
-<form class="example-form">
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Prénom</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Nom</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-  </tr></table>
+<div class="registration">
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="Ex. pat@example.com">
-    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-      Merci de saisir une adresse mail valide !
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      La saisie d'une adresse mail est  <strong>obligatoire</strong>
-    </mat-error>
-  </mat-form-field>
+  <h1>Inscription</h1>
+  <p>Les champs marqués d'une astérisque (*) sont obligatoires.</p>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Mot de passe</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
-    <button class="icons" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput for="firstname" required>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput for="lastname" required>
+      </mat-form-field></td>
+    </tr></table>
 
-  <label>Êtes vous une entreprise ?</label>
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1">Oui</mat-radio-button>
-    <mat-radio-button value="2">Non</mat-radio-button>
-  </mat-radio-group><tr>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Ex. pat@example.com" for="email" required>
+    </mat-form-field>
 
-  <button type="submit" mat-raised-button color="accent">Valider</button>
+    <mat-form-field class="example-full-width">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" for="password" required>
+      <button class="icons" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <mat-label>Entreprise</mat-label>
+      <input type="text" matInput placeholder="Uniquement si vous êtes une société" for="company">
+    </mat-form-field>
+    <button (click)="onSubmit()" type="submit" mat-raised-button>Valider</button>
 
-</form>
-
+  </form>
+</div>
