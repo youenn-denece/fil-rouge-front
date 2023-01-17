@@ -1,7 +1,6 @@
 .navbar {
   height: 100%;
-  // width: 100%;
-  background-color: black;
+  background-color: rgb(238, 238, 238);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,29 +10,23 @@
   .options {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 
     a {
       text-decoration: none;
-      color: rgb(249, 178, 51);
+      color: rgb(114, 114, 114);
       min-width: 100px;
       text-align: center;
 
       &:hover {
-        color: rgb(54, 169, 225);
-        font-weight: bold;
+        color: rgb(44, 92, 250);
       }
     }
   }
 
   img {
-    height: 50px;
+    margin-left: 50px;
+    height: 70px;
   }
 
-}
-
-.registrationButton {
-  margin-top: 13px;
-  color: rgb(249, 178, 51);
-  text-decoration: none;
 }
