@@ -4,15 +4,20 @@
   right: 0;
   height: 50px;
   width: 100vw;
-  background-color: black;
+  background-color: rgb(238,238,238);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 0 20px;
   gap: 20px;
 
   p {
     text-decoration: none;
-    color: rgb(249, 178, 51);
+    color: rgb(114,114,114);
+    font-size: 12px;
   }
+}
+
+.favicon {
+  width: 20px;
 }
