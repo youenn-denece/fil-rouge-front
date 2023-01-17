@@ -38,8 +38,8 @@ import { FormationListComponent } from './formation-list/formation-list.componen
     DashboardIndexComponent,
     DashboardSearchComponent,
     DashboardSessionDetailsComponent,
-    EvaluationIndexComponent
-    FormationListComponent,
+    EvaluationIndexComponent,
+    FormationListComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +51,7 @@ import { FormationListComponent } from './formation-list/formation-list.componen
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    MatSliderModule
+    MatSliderModule,
     HttpClientModule,
     FormsModule,
     MatSelectModule
