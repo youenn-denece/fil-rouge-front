@@ -16,12 +16,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSliderModule} from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
 import { DashboardSearchComponent } from './dashboard-index/dashboard-search/dashboard-search.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
 import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
 
 
 @NgModule({
@@ -36,6 +39,7 @@ import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.co
     DashboardSearchComponent,
     DashboardSessionDetailsComponent,
     EvaluationIndexComponent
+    FormationListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,9 @@ import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.co
     MatRadioModule,
     MatSelectModule,
     MatSliderModule
+    HttpClientModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
