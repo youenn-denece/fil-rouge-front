@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
 import { HomeComponent } from './home/home.component';
+import { FormationListComponent } from './formation-list/formation-list.component'
 import { ConnexionComponent } from './connexion/connexion.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'registration', component: RegistrationFormComponent },
   { path: 'connexion', component: ConnexionComponent },
+  { path: 'formation-list', component: FormationListComponent },
   {
     path: 'dashboard',
     component: DashboardIndexComponent,

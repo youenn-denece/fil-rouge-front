@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
 import { DashboardSearchComponent } from './dashboard-index/dashboard-search/dashboard-search.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
     ConnexionComponent,
     DashboardIndexComponent,
     DashboardSearchComponent,
-    DashboardSessionDetailsComponent
+    DashboardSessionDetailsComponent,
+    FormationListComponent,
   ],
   imports: [
     BrowserModule,

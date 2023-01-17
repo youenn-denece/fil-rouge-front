@@ -1,0 +1,33 @@
+<h1>Catalogue des formations</h1>
+<div class="formation-navbar" *ngFor="let cat of formationCat" (click)="changeSelectedCategroy(cat)">
+  <div class="formation-navbar-detail">
+    <p>{{ cat?.name | titlecase }}</p>
+  </div>
+</div>
+<div class="formation-index">
+  <div class="formations">
+    <div *ngIf="isCategorySelected()">
+      <div class="formation-list" *ngFor="let formation of getFormationList()" (click)="changeSelectedFormation(formation)">
+        <div class="formation-list-item">
+          <h2>{{ formation?.name | titlecase }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="formation-detail">
+      <h2>{{ getSelectedFormation()?.name | titlecase }}</h2>
+      <h3>{{ getSelectedFormation()?.overview | titlecase }}</h3>
+      <p *ngIf="isFormationSelected()">
+        Lorem ipsum dolor sit amet. Sed placeat iste qui facere quas qui expedita earum qui consequatur quasi eos ipsum maiores et fugiat omnis.
+        Ut autem officiis ut magni galisum eum officia pariatur quo aperiam deserunt et rerum sunt vel nostrum voluptas.
+        Est optio obcaecati eum delectus amet eum animi molestiae et odit ipsum aut natus necessitatibus.
+        Aut necessitatibus modi ex itaque soluta vel tempore possimus aut soluta consectetur non ipsam sequi.
+        Ut obcaecati reprehenderit eum nihil labore in saepe fugiat qui nostrum earum a voluptate quos.
+        In eius modi nam molestiae consequuntur et sunt corrupti ut nemo voluptatem id ipsum dicta.
+        At facere voluptatem 33 nemo iste. Et sint galisum qui libero amet eum architecto consectetur ut voluptatibus internos.
+        Sed enim quos et officia molestiae in minima nesciunt et voluptates magni sit optio voluptatem et laudantium maxime.
+      </p>
+      <h4 *ngIf="isFormationSelected()"> Next sessions</h4>
+  </div>
+</div>
+
