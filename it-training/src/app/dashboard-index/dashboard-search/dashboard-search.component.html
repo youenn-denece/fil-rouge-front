@@ -1,25 +1,11 @@
 <mat-form-field appearance="fill">
-  <mat-label>Session</mat-label>
+  <mat-label>Liste des Sessions</mat-label>
   <mat-select>
     <mat-option>-- Sélectionner une session --</mat-option>
     <mat-optgroup>JAVA
-      <mat-option>
-        2023/01/25 - 2023/02-12
+      <mat-option *ngFor="let session of (sessionList | async)" >
+        <div (click)="selectSession(session.id)">{{session.campusCity}} / {{session.campusName}} / {{session.startDate}}</div>
       </mat-option>
     </mat-optgroup>
   </mat-select>
 </mat-form-field>
-
-<!-- MODELE -->
-<!-- <mat-form-field appearance="fill">
-  <mat-label>Pokemon</mat-label>
-  <mat-select [formControl]="pokemonControl">
-    <mat-option>-- None --</mat-option>
-    <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name"
-                  [disabled]="group.disabled">
-      <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
-        {{pokemon.viewValue}}
-      </mat-option>
-    </mat-optgroup>
-  </mat-select>
-</mat-form-field> -->

@@ -1,1 +1,24 @@
-<p>dashboard-session-details works!</p>
+<div class="session-detail">
+
+  <div class="session-info" *ngIf="!!sess; else noSessSelected">
+    <h1>{{sess.courseName}}</h1>
+    <h2>{{sess.campusName}}, {{sess.campusCity}}</h2>
+    <h3>Du {{sess.startDate}} au {{sess.endDate}}</h3>
+    <div>Formateur :
+      <p *ngIf="!!sess.teacherName; else toBeDetermined">{{sess.teacherName}}</p>
+    </div>
+    <div>Salle :
+      <p *ngIf="!!sess.classroomNumber; else toBeDetermined">{{sess.classroomNumber}}</p>
+    </div>
+    <div>Inscriptions : {{sess.studentNumber}}/{{sess.maxStudentNumber}}</div>
+  </div>
+
+  <ng-template #toBeDetermined><p class="toBeDetermined">A déterminer</p></ng-template>
+
+  <ng-template #noSessSelected>
+    <div class="no-sess-selected">
+      Merci de sélectionner une session de formation
+    </div>
+  </ng-template>
+
+</div>
