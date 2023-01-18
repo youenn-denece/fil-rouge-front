@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ISession } from '../model/session';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from 'src/app/session.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class DashboardSessionDetailsComponent implements OnDestroy {
 
   private subs: Subscription;
 
-  constructor(private sessionService: SessionService, private router: Router, private route: ActivatedRoute) {
+  constructor(private sessionService: SessionService) {
     this.subs = sessionService.sessionC$.subscribe( s => this.sess = s);
   }
 

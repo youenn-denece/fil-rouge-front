@@ -15,8 +15,8 @@ export interface ISession {
 
 export const sess : ISession = {
   id: '1',
-  startDate: '2023-03-06',
-  endDate: '2023-03-10',
+  startDate: '2023-05-12',
+  endDate: '2023-05-22',
   price: 2500.50,
   studentNumber: 12,
   maxStudentNumber: 25,
@@ -30,13 +30,13 @@ export const sess : ISession = {
 
 export const sessions : ISession[] = [
   {
-    id: '1',
-    startDate: '2023-03-06',
-    endDate: '2023-03-10',
+    id: '2',
+    startDate: '2023-04-14',
+    endDate: '2023-04-20',
     price: 2500.50,
-    studentNumber: 12,
+    studentNumber: 19,
     maxStudentNumber: 25,
-    courseName: 'PLOP',
+    courseName: 'PHP',
     categoryName: 'Langage',
     campusName: 'Campus rose',
     campusCity: 'Toulouse',
@@ -44,13 +44,13 @@ export const sessions : ISession[] = [
     teacherName: 'Xavier Bourget',
   },
   {
-    id: '2',
+    id: '3',
     startDate: '2023-03-06',
     endDate: '2023-03-10',
     price: 2500.50,
     studentNumber: 12,
     maxStudentNumber: 18,
-    courseName: 'COCO',
+    courseName: 'TCP/IP',
     categoryName: 'Réseaux',
     campusName: 'Campus rose',
     campusCity: 'Toulouse',
