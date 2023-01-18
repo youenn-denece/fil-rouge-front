@@ -13,8 +13,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'registration', component: RegistrationFormComponent },
   { path: 'connexion', component: ConnexionComponent },
-  { path: 'evaluation', component: EvaluationIndexComponent},
-  { path: 'evaluation-formation', component: EvaluationFormationComponent },
+  {
+    path: 'evaluation',
+    component: EvaluationIndexComponent,
+    children: [
+      {
+        path:'evaluation-formation',
+        component: EvaluationFormationComponent,
+      },
+    ],
+  },
   { path: 'formation-list', component: FormationListComponent },
   {
     path: 'dashboard',
