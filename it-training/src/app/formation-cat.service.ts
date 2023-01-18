@@ -14,4 +14,8 @@ export class FormationCatService {
   getFormationsCatList(): Observable<FormationCat[]> {
     return this.httpClient.get<FormationCat[]>(`${this.baseURL}`);
   }
+
+  getFormationCatById(id: number): Observable<FormationCat> {
+    return this.httpClient.get<FormationCat>(`${this.baseURL}${id}`);
+  }
 }

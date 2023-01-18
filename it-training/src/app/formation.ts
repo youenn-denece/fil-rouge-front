@@ -1,6 +1,6 @@
 export class Formation {
   id?: number;
   name?: string;
-  overview?: string;
+  description?: string;
   catId?: number;
 }

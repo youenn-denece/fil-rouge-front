@@ -12,13 +12,14 @@ import { FormationCat } from '../formation-cat';
 })
 export class FormationListComponent {
   formations?: Formation[];
+  formationCatId?: number;
   formationsCat?: FormationCat[];
 
   selectedFormation: any = 'null';
-  selectedCategory: any = 'Langages';
+  selectedCategory?: FormationCat;
   formationSelected: boolean = false;
   categorySelected: boolean = true;
-
+  id: any;
   constructor(
     private formationService: FormationService,
     private formationCatService: FormationCatService,
@@ -28,6 +29,7 @@ export class FormationListComponent {
   ngOnInit(): void {
     this.getFormations();
     this.getFormationsCat();
+    this.getFormationsCatById(1);
   }
 
   private getFormations() {
@@ -42,14 +44,26 @@ export class FormationListComponent {
     });
   }
 
+  public getFormationsCatById(id: number) {
+    this.formationCatService.getFormationCatById(id).subscribe((data) => {
+      this.id = data.id;
+      this.formations = data.courseList;
+    });
+  }
+
   public changeSelectedFormation(f: Formation) {
     this.formationSelected = true;
     this.selectedFormation = f;
   }
 
+
   public changeSelectedCategroy(fcat: FormationCat) {
+    console.log("enter change selected cat");
     this.selectedCategory = fcat;
     this.categorySelected = true;
+    this.id = fcat.id;
+    this.getFormationsCatById(this.id);
+    console.log("id = " + this.id);
   }
 
   public isFormationSelected() {
@@ -61,5 +75,4 @@ export class FormationListComponent {
   public getSelectedFormation() {
     return this.selectedFormation;
   }
-
 }
