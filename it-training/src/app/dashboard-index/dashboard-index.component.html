@@ -2,10 +2,10 @@
   <h1>Dashboard responsable</h1>
   <div class="content">
     <div class="dashboard-research">
-      <app-dashboard-search></app-dashboard-search>
+      <app-dashboard-search (changeSelectedSession)="onChangeSelectedSession($event)"></app-dashboard-search>
     </div>
     <div class="router-outlet">
-      <router-outlet></router-outlet>
+      <app-dashboard-session-details></app-dashboard-session-details>
     </div>
   </div>
 </div>

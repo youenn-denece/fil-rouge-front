@@ -30,7 +30,7 @@ const routes: Routes = [
     component: DashboardIndexComponent,
     children: [
       {
-        path: 'dashboardsessiondetails',
+        path: 'dashboard-session-details',
         component: DashboardSessionDetailsComponent,
       },
     ],
