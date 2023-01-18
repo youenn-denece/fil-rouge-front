@@ -15,6 +15,7 @@
   </div>
 
   <div class="formation-detail">
+      <h2 *ngIf="!isFormationSelected()">Veuillez selectionner une formation</h2>
       <h2>{{ getSelectedFormation()?.name | titlecase }}</h2>
       <p>{{ getSelectedFormation()?.description | titlecase }}</p>
       <h4 *ngIf="isFormationSelected()"> Next sessions</h4>
