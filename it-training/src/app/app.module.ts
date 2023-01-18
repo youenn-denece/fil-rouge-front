@@ -23,6 +23,7 @@ import { DashboardIndexComponent } from './dashboard-index/dashboard-index.compo
 import { DashboardSearchComponent } from './dashboard-index/dashboard-search/dashboard-search.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
+import { EvaluationFormationComponent } from './evaluation-index/evaluation-formation/evaluation-formation.component';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { FormationListComponent } from './formation-list/formation-list.componen
     DashboardIndexComponent,
     DashboardSearchComponent,
     DashboardSessionDetailsComponent,
+    EvaluationIndexComponent,
     FormationListComponent,
+    EvaluationFormationComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,8 @@ import { FormationListComponent } from './formation-list/formation-list.componen
     MatIconModule,
     MatButtonModule,
     MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
     HttpClientModule,
     FormsModule,
     MatSelectModule
