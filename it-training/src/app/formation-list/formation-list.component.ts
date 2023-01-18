@@ -27,15 +27,8 @@ export class FormationListComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getFormations();
     this.getFormationsCat();
     this.getFormationsCatById(1);
-  }
-
-  private getFormations() {
-    this.formationService.getFormationsList().subscribe((data) => {
-      this.formations = data;
-    });
   }
 
   private getFormationsCat() {
@@ -58,7 +51,6 @@ export class FormationListComponent {
 
 
   public changeSelectedCategroy(fcat: FormationCat) {
-    console.log("enter change selected cat");
     this.selectedCategory = fcat;
     this.categorySelected = true;
     this.id = fcat.id;
