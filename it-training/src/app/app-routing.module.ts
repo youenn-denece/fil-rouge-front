@@ -23,7 +23,6 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'evaluation-formation', component: EvaluationFormationComponent },
   { path: 'formation-list', component: FormationListComponent },
   {
     path: 'dashboard',
