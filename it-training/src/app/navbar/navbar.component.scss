@@ -1,12 +1,12 @@
 .navbar {
   height: 100%;
-  // width: 100%;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   gap: 20px;
+  background: rgb(166,166,166);
+  background: linear-gradient(90deg, rgba(166,166,166,1) 0%, rgba(193,193,193,1) 97%);
 
   .options {
     display: flex;
@@ -15,7 +15,7 @@
 
     a {
       text-decoration: none;
-      color: rgb(249, 178, 51);
+      color: rgb(114,114,114);
       min-width: 100px;
       text-align: center;
 
@@ -30,10 +30,4 @@
     height: 50px;
   }
 
-}
-
-.registrationButton {
-  margin-top: 13px;
-  color: rgb(249, 178, 51);
-  text-decoration: none;
 }

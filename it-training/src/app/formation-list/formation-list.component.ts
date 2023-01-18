@@ -1,8 +1,9 @@
 import { Component, DebugElement } from '@angular/core';
-import { Formation, formations } from 'src/app/formation';
+import { Router } from '@angular/router';
+import { Formation } from '../formation';
 import { FormationCatService } from '../formation-cat.service';
 import { FormationService } from '../formation.service';
-import { FormationCat, formationCat } from '../formationsCat';
+import { FormationCat } from '../formation-cat';
 
 @Component({
   selector: 'app-formation-list',
@@ -10,53 +11,68 @@ import { FormationCat, formationCat } from '../formationsCat';
   styleUrls: ['./formation-list.component.scss'],
 })
 export class FormationListComponent {
-  formations = formations;
-  formationCat = formationCat;
-  selectedFormation: any;
-  selectedCategory: any;
-  nextSession: any;
-  formationSelected: boolean;
-  categorySelected: boolean;
+  formations?: Formation[];
+  formationCatId?: number;
+  formationsCat?: FormationCat[];
 
-  constructor() {
-    this.formationSelected = false;
-    this.categorySelected = false;
-    this.selectedCategory = 'Langages';
+  selectedFormation: any = 'null';
+  selectedCategory?: FormationCat;
+  formationSelected: boolean = false;
+  categorySelected: boolean = true;
+  id: any;
+  constructor(
+    private formationService: FormationService,
+    private formationCatService: FormationCatService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.getFormations();
+    this.getFormationsCat();
+    this.getFormationsCatById(1);
   }
-  isFormationSelected() {
-    return this.formationSelected;
+
+  private getFormations() {
+    this.formationService.getFormationsList().subscribe((data) => {
+      this.formations = data;
+    });
   }
-  isCategorySelected() {
-    return this.categorySelected;
+
+  private getFormationsCat() {
+    this.formationCatService.getFormationsCatList().subscribe((data) => {
+      this.formationsCat = data;
+    });
   }
-  changeSelectedFormation(f: Formation) {
+
+  public getFormationsCatById(id: number) {
+    this.formationCatService.getFormationCatById(id).subscribe((data) => {
+      this.id = data.id;
+      this.formations = data.courseList;
+    });
+  }
+
+  public changeSelectedFormation(f: Formation) {
     this.formationSelected = true;
     this.selectedFormation = f;
   }
-  getFormationList() {
-    const myForm: Formation[] = [];
-    for (let index = 0; index < formations.length; index++) {
-      const element = formations[index];
-      let i = 0;
-      if (element.categoryID == this.selectedCategory.id) {
-        myForm.push(element);
-        i++;
-      }
-    }
-    console.log(myForm.length);
-    return myForm;
-  }
-  getSelectedFormation() {
-    return this.selectedFormation;
-  }
-  changeSelectedCategroy(fcat: FormationCat) {
+
+
+  public changeSelectedCategroy(fcat: FormationCat) {
+    console.log("enter change selected cat");
     this.selectedCategory = fcat;
     this.categorySelected = true;
+    this.id = fcat.id;
+    this.getFormationsCatById(this.id);
+    console.log("id = " + this.id);
   }
-  getSelectedCat() {
-    return this.selectedCategory;
+
+  public isFormationSelected() {
+    return this.formationSelected;
   }
-  getNextSessions() {
-    return this.nextSession;
+  public isCategorySelected() {
+    return this.categorySelected;
+  }
+  public getSelectedFormation() {
+    return this.selectedFormation;
   }
 }
