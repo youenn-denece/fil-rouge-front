@@ -1,0 +1,31 @@
+<div *ngIf="!gotSessions()" class="maindiv">
+  <h1>Pas de sessions programmées pour le cursus {{ formation.name }} </h1>
+</div>
+<div *ngIf="gotSessions()" class="maindiv">
+  <h1>Formation {{ formation.name }} </h1>
+  <table  class="maindiv" class = "table table-striped">
+      <thead>
+          <tr>
+              <th> Début </th>
+              <th>  Fin </th>
+              <th> Places</th>
+              <th> Prix </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let s of sessions">
+              <td> {{ s.startDate }} </td>
+              <td> {{ s.endDate }} </td>
+              <td> {{ s.maxStudentNumber }} </td>
+              <td> {{ s.price }} </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="button" (click) = "refresh()">
+  <div id="refreshdiv">
+    <h2>Retour au catalogue</h2>
+  </div>
+</div>
+
+
