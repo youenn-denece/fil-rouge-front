@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatSliderModule} from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 
 import { MatSelectModule } from '@angular/material/select';
@@ -23,7 +24,11 @@ import { DashboardIndexComponent } from './dashboard-index/dashboard-index.compo
 import { DashboardSearchComponent } from './dashboard-index/dashboard-search/dashboard-search.component';
 import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-session-details/dashboard-session-details.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
+
 import { XhrInterceptor } from './interceptor/app.request.interceptor';
+import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.component';
+import { EvaluationFormationComponent } from './evaluation-index/evaluation-formation/evaluation-formation.component';
+import { FormationSessionComponent } from './formation-list/formation-session/formation-session.component';
 
 
 @NgModule({
@@ -37,7 +42,10 @@ import { XhrInterceptor } from './interceptor/app.request.interceptor';
     DashboardIndexComponent,
     DashboardSearchComponent,
     DashboardSessionDetailsComponent,
+    EvaluationIndexComponent,
     FormationListComponent,
+    EvaluationFormationComponent,
+    FormationSessionComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,8 @@ import { XhrInterceptor } from './interceptor/app.request.interceptor';
     MatIconModule,
     MatButtonModule,
     MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
     HttpClientModule,
     FormsModule,
     MatSelectModule,

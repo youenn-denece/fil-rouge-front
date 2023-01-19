@@ -2,12 +2,12 @@
   <h1>Inscription</h1>
       <p>Les champs marqués d'une astérisque (*) sont obligatoires.</p>
   <form class="example-form">
-    <table 
-        class="example-full-width" 
+    <table
+        class="example-full-width"
         cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
         <mat-label>Prénom</mat-label>
-        <input 
+        <input
           matInput type="text"
           [(ngModel)] = "student.firstname"
           name="firstname"
@@ -15,7 +15,7 @@
       </mat-form-field></td>
       <td><mat-form-field class="example-full-width">
         <mat-label>Nom</mat-label>
-        <input 
+        <input
             matInput type="text"
             [(ngModel)] = "student.lastname"
             name="lastname"
@@ -66,6 +66,6 @@
     <button
         (click)="onSubmit()"
         type="submit"
-        mat-raised-button>Valider</button>
-  </form> 
+        mat-raised-button color="accent">Valider</button>
+  </form>
 </div>
