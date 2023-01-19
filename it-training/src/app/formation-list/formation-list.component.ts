@@ -1,9 +1,9 @@
 import { Component, DebugElement } from '@angular/core';
 import { Router } from '@angular/router';
-import { Formation } from '../formation';
-import { FormationCatService } from '../formation-cat.service';
-import { FormationService } from '../formation.service';
-import { FormationCat } from '../formation-cat';
+import { Formation } from './formation';
+import { FormationCatService } from './formation-cat.service';
+import { FormationService } from './formation.service';
+import { FormationCat } from './formation-cat';
 
 @Component({
   selector: 'app-formation-list',
@@ -47,6 +47,7 @@ export class FormationListComponent {
   public changeSelectedFormation(f: Formation) {
     this.formationSelected = true;
     this.selectedFormation = f;
+    console.log(this.selectedFormation.sessionList[0].startDate)
   }
 
 
