@@ -6,11 +6,9 @@
   </div>
   <div class="formation-index">
     <div class="formations">
-      <div *ngIf="isCategorySelected()">
-        <div class="formation-list" *ngFor="let formation of formations" (click)="changeSelectedFormation(formation)">
-          <div class="formation-list-item">
-            <h2>{{ formation?.name }}</h2>
-          </div>
+      <div class="formation-list" *ngFor="let formation of formations" (click)="changeSelectedFormation(formation)">
+        <div class="formation-list-item">
+          <h2>{{ formation?.name }}</h2>
         </div>
       </div>
     </div>

@@ -4,5 +4,4 @@ export class Session {
   endDate?: String;
   price?: number;
   maxStudentNumber?: number;
-  campus?: string;
 }
