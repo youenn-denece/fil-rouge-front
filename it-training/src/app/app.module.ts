@@ -26,6 +26,7 @@ import { DashboardSessionDetailsComponent } from './dashboard-index/dashboard-se
 import { FormationListComponent } from './formation-list/formation-list.component';
 import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.component';
 import { EvaluationFormationComponent } from './evaluation-index/evaluation-formation/evaluation-formation.component';
+import { FormationSessionComponent } from './formation-session/formation-session.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { EvaluationFormationComponent } from './evaluation-index/evaluation-form
     EvaluationIndexComponent,
     FormationListComponent,
     EvaluationFormationComponent,
+    FormationSessionComponent,
   ],
   imports: [
     BrowserModule,
