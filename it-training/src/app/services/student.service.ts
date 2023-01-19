@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Student } from "./student";
+import { Student } from "../model/student.model";
 
 const baseUrl= "http://localhost:8081/api/it-training";
 
