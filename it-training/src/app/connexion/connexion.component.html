@@ -2,13 +2,8 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="Ex. pat@example.com" />
-    <mat-error
-      *ngIf="
-        emailFormControl.hasError('email') &&
-        !emailFormControl.hasError('required')
-      "
-    >
+    <input type="email" matInput placeholder="Ex. pat@example.com" [(ngModel)] = "student.email" name="email"/>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
       Merci de saisir une adresse mail valide !
     </mat-error>
     <mat-error *ngIf="emailFormControl.hasError('required')">
@@ -18,20 +13,19 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>Mot de passe</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" />
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)] = "student.password" name="password"/>
     <button
       class="icons"
       mat-icon-button
       matSuffix
       (click)="hide = !hide"
       [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
+      [attr.aria-pressed]="hide">
       <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
     </button>
   </mat-form-field>
 
   <tr>
-    <button type="submit" mat-raised-button color="accent">Valider</button>
+    <button (click)="validateStudent()" type="submit" mat-raised-button color="accent">Valider</button>
   </tr>
 </form>
