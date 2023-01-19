@@ -12,6 +12,7 @@ import { FormationCat } from './formation-cat';
   styleUrls: ['./formation-list.component.scss'],
 })
 export class FormationListComponent {
+
   formations?: Formation[];
   formationCatId?: number;
   formationsCat?: FormationCat[];
@@ -19,9 +20,9 @@ export class FormationListComponent {
   selectedFormation: any = 'null';
   selectedCategory?: FormationCat;
   formationSelected: boolean = false;
-  categorySelected: boolean = true;
   id: any;
   sessionList!: Session[];
+
   constructor(
     private formationService: FormationService,
     private formationCatService: FormationCatService,
@@ -58,16 +59,12 @@ export class FormationListComponent {
 
   public changeSelectedCategroy(fcat: FormationCat) {
     this.selectedCategory = fcat;
-    this.categorySelected = true;
     this.id = fcat.id;
     this.getFormationsCatById(this.id);
   }
 
   public isFormationSelected() {
     return this.formationSelected;
-  }
-  public isCategorySelected() {
-    return this.categorySelected;
   }
   public getSelectedFormation() {
     return this.selectedFormation;

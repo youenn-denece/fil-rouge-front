@@ -14,20 +14,4 @@ export class FormationService {
   getFormationsList(): Observable<Formation[]> {
     return this.httpClient.get<Formation[]>(`${this.baseURL}`);
   }
-
-  createFormation(formation: Formation): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, formation);
-  }
-
-  getFormationById(id: number): Observable<Formation> {
-    return this.httpClient.get<Formation>(`${this.baseURL}/${id}`);
-  }
-
-  updateFormation(id: number, formation: Formation): Observable<Object> {
-    return this.httpClient.put(`${this.baseURL}/${id}`, formation);
-  }
-
-  deleteFormation(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
-  }
 }
