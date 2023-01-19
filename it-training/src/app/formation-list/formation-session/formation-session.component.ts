@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Formation,Session } from '../formation';
+import { Formation } from '../formation';
+import { Session } from '../session';
 
 @Component({
   selector: 'app-formation-session',
