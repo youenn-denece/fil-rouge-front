@@ -1,11 +1,40 @@
+.connexion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+
+}
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+
 }
 
 .example-full-width {
-  width: 100%;
+  min-width: 500px;
+  max-width: 500px;
+
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+
 }
 
 .icons {
@@ -14,4 +43,14 @@
 
 .validButton {
   background-color: green;
+}
+
+button {
+  &:hover{
+    background-color: black;
+    color: white;
+  }
+  display: flex;
+  justify-content: center;
+
 }
