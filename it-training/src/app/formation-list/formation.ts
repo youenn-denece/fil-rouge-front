@@ -6,10 +6,11 @@ export class Formation {
   sessionList?: Session[];
 }
 
-export class Session{
+export class Session {
   id?: number;
   startDate?: String;
   endDate?: String;
   price?: number;
-  maxStudent?: number;
+  maxStudentNumber?: number;
+  campus?: string;
 }

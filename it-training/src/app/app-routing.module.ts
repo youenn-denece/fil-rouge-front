@@ -8,6 +8,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { EvaluationIndexComponent } from './evaluation-index/evaluation-index.component';
 import { EvaluationFormationComponent } from './evaluation-index/evaluation-formation/evaluation-formation.component';
+import { FormationSessionComponent } from './formation-list/formation-session/formation-session.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,7 +25,16 @@ const routes: Routes = [
     ],
   },
   { path: 'evaluation-formation', component: EvaluationFormationComponent },
-  { path: 'formation-list', component: FormationListComponent },
+  {
+    path: 'formation-list',
+    component: FormationListComponent,
+    children: [
+      {
+        path: 'formation-session',
+        component: FormationSessionComponent,
+      },
+    ],
+  },
   {
     path: 'dashboard',
     component: DashboardIndexComponent,

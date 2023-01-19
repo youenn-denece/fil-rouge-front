@@ -1,6 +1,7 @@
 import { Component, DebugElement } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formation } from './formation';
+import { Session } from './formation';
 import { FormationCatService } from './formation-cat.service';
 import { FormationService } from './formation.service';
 import { FormationCat } from './formation-cat';
@@ -14,12 +15,13 @@ export class FormationListComponent {
   formations?: Formation[];
   formationCatId?: number;
   formationsCat?: FormationCat[];
-
+  sessionOpened: boolean = false;
   selectedFormation: any = 'null';
   selectedCategory?: FormationCat;
   formationSelected: boolean = false;
   categorySelected: boolean = true;
   id: any;
+  sessionList!: Session[];
   constructor(
     private formationService: FormationService,
     private formationCatService: FormationCatService,
@@ -47,16 +49,18 @@ export class FormationListComponent {
   public changeSelectedFormation(f: Formation) {
     this.formationSelected = true;
     this.selectedFormation = f;
-    console.log(this.selectedFormation.sessionList[0].startDate)
+    this.sessionList = this.selectedFormation.sessionList;
   }
 
+  public getSessionList() {
+    return this.sessionList;
+  }
 
   public changeSelectedCategroy(fcat: FormationCat) {
     this.selectedCategory = fcat;
     this.categorySelected = true;
     this.id = fcat.id;
     this.getFormationsCatById(this.id);
-    console.log("id = " + this.id);
   }
 
   public isFormationSelected() {
@@ -67,5 +71,8 @@ export class FormationListComponent {
   }
   public getSelectedFormation() {
     return this.selectedFormation;
+  }
+  public getSessions() {
+    return this.sessionList;
   }
 }

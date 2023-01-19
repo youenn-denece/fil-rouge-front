@@ -1,23 +1,33 @@
-<div class="formation-navbar" *ngFor="let cat of formationsCat" (click)="changeSelectedCategroy(cat)">
-  <div class="formation-navbar-detail">
-    <p>{{ cat?.name }}</p>
+<div *ngIf="!sessionOpened">
+  <div class="formation-navbar" *ngFor="let cat of formationsCat" (click)="changeSelectedCategroy(cat)">
+    <div class="formation-navbar-detail">
+      <p>{{ cat?.name }}</p>
+    </div>
   </div>
-</div>
-<div class="formation-index">
-  <div class="formations">
-    <div *ngIf="isCategorySelected()">
-      <div class="formation-list" *ngFor="let formation of formations" (click)="changeSelectedFormation(formation)">
-        <div class="formation-list-item">
-          <h2>{{ formation?.name }}</h2>
+  <div class="formation-index">
+    <div class="formations">
+      <div *ngIf="isCategorySelected()">
+        <div class="formation-list" *ngFor="let formation of formations" (click)="changeSelectedFormation(formation)">
+          <div class="formation-list-item">
+            <h2>{{ formation?.name }}</h2>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="formation-detail">
-      <h2 *ngIf="!isFormationSelected()">Veuillez selectionner une formation</h2>
-      <h2>{{ getSelectedFormation()?.name | titlecase }}</h2>
-      <p>{{ getSelectedFormation()?.description | titlecase }}</p>
-      <h4 *ngIf="isFormationSelected()"> Next sessions</h4>
+    <div class="formation-detail">
+        <h2 *ngIf="!isFormationSelected()">Veuillez selectionner une formation</h2>
+        <h2>{{ getSelectedFormation()?.name | titlecase }}</h2>
+        <p>{{ getSelectedFormation()?.description | titlecase }}</p>
+        <h4 *ngIf="isFormationSelected()" (click)="sessionOpened = true"> Next sessions</h4>
+    </div>
   </div>
 </div>
+
+
+
+
+<div class= "router-outlet" id="div-session" *ngIf="sessionOpened">
+  <app-formation-session [formation]="getSelectedFormation()" [sessions]="getSessions()"></app-formation-session>
+</div>
+
