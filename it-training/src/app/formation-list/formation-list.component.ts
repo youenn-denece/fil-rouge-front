@@ -1,7 +1,7 @@
 import { Component, DebugElement } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formation } from './formation';
-import { Session } from './formation';
+import { Session } from './session';
 import { FormationCatService } from './formation-cat.service';
 import { FormationService } from './formation.service';
 import { FormationCat } from './formation-cat';

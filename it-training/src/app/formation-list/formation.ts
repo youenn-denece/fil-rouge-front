@@ -1,3 +1,5 @@
+import { Session } from "./session";
+
 export class Formation {
   id?: number;
   name?: string;
@@ -6,11 +8,3 @@ export class Formation {
   sessionList?: Session[];
 }
 
-export class Session {
-  id?: number;
-  startDate?: String;
-  endDate?: String;
-  price?: number;
-  maxStudentNumber?: number;
-  campus?: string;
-}
